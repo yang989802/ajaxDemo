@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - confession_wall@localhost" uuid="6d0ce6a4-6451-4cce-8372-2c602cf0f6a2">
+    <database-info product="MySQL" version="5.7.8-rc-log" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.40 ( Revision: 402933ef52cad9aa82624e80acbea46e3a701ce6 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
+    <schema name="" catalog="confession_wall"/>
+    <table name="travel_detail" schema="" catalog="confession_wall" type="TABLE">
+      <column name="joinMax" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="clicks" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="content" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12" remarks="5YaF5a65"/>
+      <column name="travelPic" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12" remarks="5Zu+54mH"/>
+      <column name="joinNum" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4" remarks="5Yqg5YWl5Liq5pWw"/>
+      <column name="title" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12" remarks="5qCH6aKY"/>
+      <column name="endTime" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93" remarks="57uT5p2f5pe26Ze0"/>
+      <column name="createdAt" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93" remarks="5Yib5bu65pe26Ze0"/>
+      <column name="updatedAt" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93" remarks="5pu05paw5pe26Ze0"/>
+      <column name="objectId" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" remarks="6aG555uu57yW5Y+3"/>
+      <column name="releaseUserId" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12" remarks="5byA5Yib6ICFSUQ="/>
+      <column name="cantJoinTime" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93" remarks="5LiN6IO95Yqg5YWl5pe26Ze0"/>
+      <column name="beginTime" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93" remarks="5byA5aeL5pe26Ze0"/>
+      <column name="releaseTime" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93" remarks="5Y+R5biD5pe26Ze0"/>
+      <column name="destination" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12" remarks="5Zyw54K5"/>
+      <primary-key name="PRIMARY" columns="objectId"/>
+    </table>
+    <table name="travel_peo" schema="" catalog="confession_wall" type="TABLE">
+      <column name="user_id" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="travel_id" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="user_id"/>
+      <index name="travel_id" unique="false" columns="travel_id"/>
+    </table>
+    <table name="user_info" schema="" catalog="confession_wall" type="TABLE">
+      <column name="universities" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="sex" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="nickname" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="username" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12" remarks="55So5oi35ZCN56ewLeaJi+acuuWPtw=="/>
+      <column name="emailVerified" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12" def="J2ZhbHNlJw==" remarks="6YKu566x5piv5ZCm6aqM6K+B"/>
+      <column name="avatar" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12" remarks="5Zu+54mH5L+d5a2Y5Zyw5Z2A"/>
+      <column name="mobilePhoneNumber" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12" remarks="5omL5py65Y+3"/>
+      <column name="mobilePhoneVerified" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12" def="J2ZhbHNlJw==" remarks="5omL5py65piv5ZCm6KKr6aqM6K+B"/>
+      <column name="objectId" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="createdAt" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93" remarks="5Yib5bu65pel5pyf"/>
+      <column name="updatedAt" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93" remarks="5pu05paw5pel5pyf"/>
+      <primary-key name="PRIMARY" columns="objectId"/>
+    </table>
+  </data-source>
+</component>

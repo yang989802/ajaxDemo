@@ -5,18 +5,22 @@
 
 <head>
 <script type="text/javascript" src="js/jquery-3.1.1/jquery-3.1.1.min.js"></script>
-	<script>
-		$(document).ready(function(){
-			$("p").click(function(){
-				$(this).hide();
+	<script type="text/javascript">
+		function fun(){
+
+			$.ajax({
+			type: "GET",
+			url: "${pageContext.request.contextPath}/userlist",
+			dataType: "json",
+			success: function(data){
+			alert(data.nickname);
+			}
 			});
-		});
+
+		}
 	</script>
 </head>
-<body>
-<p>如果您点击我，我会消失。</p>
-<p>点击我，我会消失。</p>
-<p>也要点击我哦。</p>
+<body onload ="fun()">
 	<h1>${message}</h1>
 
 <img src ="img/1.jpg">
