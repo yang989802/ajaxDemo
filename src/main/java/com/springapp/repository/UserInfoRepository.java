@@ -1,25 +1,28 @@
 package com.springapp.repository;
 
 /**
- * Created by ŞÈ•D on 2017/5/12.
+ * Created by ï¿½È•D on 2017/5/12.
  */
 import com.springapp.model.UserInfoEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
+
+import java.util.List;
+
 @Repository
 public interface UserInfoRepository extends JpaRepository<UserInfoEntity, Integer>{
 
     @Query(value="select * from user_info where objectId =:oId " ,nativeQuery=true)
     public UserInfoEntity findByObjectId( @Param("oId") String objectId);
     /**
-     (1£© findAll()£º²éÕÒ±íÖĞËùÓĞ¼ÇÂ¼£»
+     (1ï¼‰ findAll()ï¼šæŸ¥æ‰¾è¡¨ä¸­æ‰€æœ‰è®°å½•ï¼›
 
-     £¨2£©findOne(Integer id)£º°´idÀ´²éÕÒÄ³Ò»Ìõ¼ÇÂ¼£»
+     ï¼ˆ2ï¼‰findOne(Integer id)ï¼šæŒ‰idæ¥æŸ¥æ‰¾æŸä¸€æ¡è®°å½•ï¼›
 
-     £¨3£©findByXXX(Object xxx)£ºÔÚÕâÀïXXXÊÇÒ»¸ö×Ö¶ÎÃû£¬¸ù¾İ¸Ã×Ö¶ÎµÄÖµ¿ª²éÕÒËùÓĞ¼ÇÂ¼£»
+     ï¼ˆ3ï¼‰findByXXX(Object xxx)ï¼šåœ¨è¿™é‡ŒXXXæ˜¯ä¸€ä¸ªå­—æ®µåï¼Œæ ¹æ®è¯¥å­—æ®µçš„å€¼å¼€æŸ¥æ‰¾æ‰€æœ‰è®°å½•ï¼›
 
-     £¨4£©save()ºÍdelete()£ºÌí¼ÓÒ»Ìõ¼ÇÂ¼ÒÔ¼°É¾³ıÒ»Ìõ¼ÇÂ¼¡£
+     ï¼ˆ4ï¼‰save()å’Œdelete()ï¼šæ·»åŠ ä¸€æ¡è®°å½•ä»¥åŠåˆ é™¤ä¸€æ¡è®°å½•ã€‚
      */
 }

@@ -10,7 +10,7 @@
 
 			$.ajax({
 			type: "GET",
-			url: "${pageContext.request.contextPath}/userlist",
+			url: "${pageContext.request.contextPath}/get",
 			dataType: "json",
 			success: function(data){
 			alert(data.nickname);
