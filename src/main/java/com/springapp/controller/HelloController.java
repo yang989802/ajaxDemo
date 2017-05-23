@@ -17,7 +17,7 @@ import java.util.List;
 
 
 @Controller
-@RequestMapping("/")
+@RequestMapping("/api")
 public class HelloController {
 	@Autowired
 	UserInfoRepository userInfoRepository;
@@ -43,7 +43,7 @@ public class HelloController {
 		UserInfoEntity a= userInfoRepository.findByObjectId("A1");
 		return "{ \"nickname\": \"" +a.getNickname()+"\"}";
 	}
-	@RequestMapping(value="/get",method = RequestMethod.GET)
+	@RequestMapping(value="/travelList",method = RequestMethod.GET)
 	public @ResponseBody
 	String getL(){
 
