@@ -9,11 +9,11 @@
 		function fun(){
 
 			$.ajax({
-			type: "GET",
-			url: "${pageContext.request.contextPath}/get",
+			type: "POST",
+			url: "${pageContext.request.contextPath}/travelList",
 			dataType: "json",
 			success: function(data){
-			alert(data.nickname);
+			alert(data.success);
 			}
 			});
 

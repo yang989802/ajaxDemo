@@ -6,8 +6,10 @@ import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 import net.sf.json.util.JSONStringer;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -17,7 +19,7 @@ import java.util.List;
 
 
 @Controller
-@RequestMapping("/api")
+@RequestMapping("/")
 public class HelloController {
 	@Autowired
 	UserInfoRepository userInfoRepository;
@@ -30,6 +32,7 @@ public class HelloController {
 	@RequestMapping("/ajaxpage")
 	public String ajaxpage(ModelMap model){
 		model.addAttribute("message", "syy");
+		System.out.println("enter ajaxpage");
 		return "hello";
 	}
 	@RequestMapping("/ajax")
@@ -40,13 +43,14 @@ public class HelloController {
 	public @ResponseBody
 	String getUser(){
 		// 查询user表
+		System.out.println("enter userlist");
 		UserInfoEntity a= userInfoRepository.findByObjectId("A1");
 		return "{ \"nickname\": \"" +a.getNickname()+"\"}";
 	}
-	@RequestMapping(value="/travelList",method = RequestMethod.GET)
+	@RequestMapping(method = RequestMethod.GET, value = "/travelList", produces = MediaType.APPLICATION_JSON_VALUE)
 	public @ResponseBody
 	String getL(){
-
+		System.out.println("enter travelList");
 		List<String> userId =new ArrayList<>();
 		userId.add("a");
 		userId.add("b");
