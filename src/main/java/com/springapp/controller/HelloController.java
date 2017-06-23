@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 
@@ -50,7 +51,47 @@ public class HelloController {
 	@RequestMapping(method = RequestMethod.GET, value = "/travelList", produces = MediaType.APPLICATION_JSON_VALUE)
 	public @ResponseBody
 	String getL(){
-		System.out.println("enter travelList");
+		Calendar now = Calendar.getInstance();
+		System.out.println(now.getTime()+"  enter travelList");
+		List<String> userId =new ArrayList<>();
+		userId.add("a");
+		userId.add("b");
+		JSONObject data =new JSONObject();
+		JSONObject aDD = new JSONObject();
+
+
+		aDD.put("joinMax","10");
+		aDD.put("clicks",2393);
+		aDD.put("content", "");
+		aDD.put("travelPic","http://ac-afkydcqq.clouddn.com/f7a0443a710ceded28ef.jpg");
+		JSONObject endTimeQ = new JSONObject();
+		endTimeQ.put("__type","Date");
+		endTimeQ.put("iso", "2017-03-28T05:41:00.000Z");
+		aDD.put("endTimes", endTimeQ);
+		aDD.put("joinNum", 0);
+		aDD.put("joinUser", userId);
+		aDD.put("title", "庐山游");
+		aDD.put("releaseUsername", "哈哈哈");
+		aDD.put("releaseUserId", "a");
+		JSONObject cantJoinTimeQ = new JSONObject();
+		cantJoinTimeQ.put("__type", "Date");
+		cantJoinTimeQ.put("iso", "2017-03-28T05:41:00.000Z");
+		aDD.put("cantJoinTime", cantJoinTimeQ);
+
+		JSONArray add = new JSONArray();
+		add.add(aDD);
+
+
+		data.put("data",add);
+		data.put("success",true);
+
+		return data.toString();
+	}
+	@RequestMapping(method = RequestMethod.POST, value = "/travelListPost", produces = MediaType.APPLICATION_JSON_VALUE)
+	public @ResponseBody
+	String postL(){
+		Calendar now = Calendar.getInstance();
+		System.out.println(now.getTime()+"  enter travelListPost");
 		List<String> userId =new ArrayList<>();
 		userId.add("a");
 		userId.add("b");
